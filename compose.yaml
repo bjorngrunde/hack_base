@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  hack_server:
+    image: 'hack_base'
+    ports: 
+      - 8080:80
+    volumes:
+      - './hack_project:/var/www'

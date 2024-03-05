@@ -1,0 +1,17 @@
+{
+    "config": {
+      "allow-plugins": {
+        "hhvm/hhvm-autoload": true
+      }
+    },
+    "require": {
+      "hhvm/hhvm-autoload": "^3.3.2",
+      "hhvm/hsl": "^4.108",
+      "facebook/xhp-lib": "^4.0"
+    },
+    "require-dev": {
+      "hhvm/hhast": "^4.168",
+      "hhvm/hacktest": "^2.4",
+      "facebook/fbexpect": "^2.9"
+    }
+  }
