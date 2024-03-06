@@ -33,8 +33,8 @@ This will make it possible to navigate the hhvm library in VS Code and debug in 
 
 ### Debug
 
-1. 
-2. Add a /var/www/.vscode/launch.json with following content
+1. With VS Code opened attached to the docker container, add a file /var/www/.vscode/launch.json with following content
+
     ```
     {
     // Use IntelliSense to learn about possible attributes.
