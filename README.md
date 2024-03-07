@@ -60,3 +60,26 @@ This will make it possible to navigate the hhvm library in VS Code and debug in 
   1. `docker exec -it my_hack_server_container bash`
     
 2. Run `hh_client`
+
+## Get XHP up'n running
+
+1. Make sure you have the autoload working. See https://docs.hhvm.com/hack/getting-started/starting-a-real-project#starting-a-real-project__autoloading
+
+2. At least for me, the xhp `<div>Yargh</div>` code wants to live in a class function, like this:
+  ```
+  use HH\Lib\IO;
+  use type Facebook\XHP\HTML\{div};
+  
+  class HomeController {
+    public async function index(): Awaitable<void> {
+      require_once(__DIR__.'/../vendor/autoload.hack');
+      \Facebook\AutoloadMap\initialize();
+
+      $xhp = <div>Hello from xhp</div>;
+      $str = await $xhp->toStringAsync();
+      await IO\request_output()->writeAllAsync($str);
+
+      // echo \var_dump($xhp);
+    }
+  }
+  ```
